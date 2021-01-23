@@ -271,23 +271,6 @@
         </div>
         <div class="preloader-bgc"></div>
         <div class="preloader-block"></div>
-        <script>
-            $(window).on('load', function () {
-                $(".preloader-img").addClass("loaded");
-                $(".preloader-bgc").fadeOut('slow');
-                $("body").removeClass("fixed");
-                $(".loader").fadeOut();
-            });
-            setTimeout(() => {
-                if (document.querySelector(".preloader-img").classList.contains("loaded")) {
-                }
-                else {
-                    $(".loader").css("display", "flex")
-                        .hide()
-                        .fadeIn();
-                }
-            }, 6000);
-        </script>
         <div class="block">
             <div class="text">Компания ООО «Три брата» была основана в 1995г. и уже более 25
                 лет является одной из крупнейших дистрибьюторских компаний в Калининградской области.</div>
@@ -675,6 +658,35 @@
 
 
     <script>
+
+        //loading
+
+        $(window).on('load', function () {
+                loading();
+            });
+            setTimeout(() => {
+                loading();
+            }, 12000);
+            function loading() {
+                $(".preloader-img").addClass("loaded");
+                $(".preloader-bgc").fadeOut('slow');
+                $("body").removeClass("fixed");
+                $(".loader").fadeOut();
+            }
+            setTimeout(() => {
+                if (document.querySelector(".preloader-img").classList.contains("loaded")) {
+                }
+                else {
+                    $(".loader").css("display", "flex")
+                        .hide()
+                        .fadeIn();
+                }
+            }, 6000);
+
+        //end loading
+
+
+
 
         //swiper1
         var swiper = new Swiper('.container-brend', {
